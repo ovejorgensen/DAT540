@@ -4,7 +4,7 @@ def caesar(text, k):
         ascii_num = ord(letter)
         # Ensure all special characters are kept in the result
         if (ascii_num < 65 or ascii_num > 122 ) or (ascii_num > 90 and ascii_num < 97):
-            result = result + letter
+            result += letter
             continue
         
         # Condition to keep capitalization of original letter
@@ -15,7 +15,7 @@ def caesar(text, k):
         else:
             next = ascii_num + k
 
-        result = result + chr(next)
+        result += chr(next)
     
     return result
 
@@ -24,7 +24,7 @@ def main():
     k = input()
     k = int(k[len(k)-1])
 
-    with open("plain.txt", "r") as file:
+    with open("plain.txt", encoding="utf-8") as file:
         text = file.read()
 
     with open("cipher.txt", "w") as cipher:
