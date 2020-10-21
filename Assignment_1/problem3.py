@@ -46,10 +46,10 @@ def longestDiagonal(arr):
     return longestLine(np.array(result).transpose())
 
 def main():
-    M = np.array([[1, 0, 0, 1],
-                  [0, 1, 1, 1],
-                  [0, 1, 1, 1],
-                  [1, 1, 1, 0]])
+    M = np.array([[1, 0, 1, 1],
+                  [0, 0, 0, 0],
+                  [0, 0, 0, 0],
+                  [0, 0, 0, 0]])
 
     longest = [horizontals(M)] # Longest horizontal
     longest.append(horizontals(M.transpose())) # Longest vertical
